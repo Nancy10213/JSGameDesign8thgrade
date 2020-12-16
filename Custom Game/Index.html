@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Menu </title>
+	<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+	<script>
+	function start(){
+		sjs.open();
+		var title_text = new sjs.Text("Cops And Robbers", 28, "blue");
+		title_text.centerH();
+		var menu_text = new sjs.Text("Net 10 Robbers to win</br>just don't them catch you!", 24, "blue");
+		menu_text.center().centerH().offset(0, -50);
+		// var designBtn = new sjs.Button("Design Level", function(){
+		//  	window.location = "CopsAndRobbers.html";
+		//  });
+		// designBtn.center(); 
+		var level1Btn = new sjs.Button("Level 1", function(){
+			window.location = "Level1.html";
+		});
+		level1Btn.center().offset(0, 50); 
+		var info_text = new sjs.Text("Created By Banyan Worland", 20, "Blue");
+		info_text.bottom().centerH();
+	}
+	</script>
+</head>
+<body onload="start()">
+	<h1> Cops and Robbers </h1>
+
+	<div id="target" style="margin:auto;background:Pink;"></div>
+</body>
+</html>

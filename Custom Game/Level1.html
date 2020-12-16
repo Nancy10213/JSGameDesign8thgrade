@@ -1,0 +1,191 @@
+	<html>
+	<head>
+		<title> CopsAndRobbers </title>
+		<script src="https://simplycodingcourses.com/files/simply.js"></script>
+		<script>
+		var level = [];
+		function start(){
+			sjs.open("target",800,500);
+			var background = new sjs.Image("Images/city_background_night.png");
+			background.setSize(2500, 500);
+			sjs.loadImageArray('[{"width":30,"height":30,"x":168,"y":355,"sx":0,"sy":0,"topSpeed":10,"src":"Images/PowerUp.png","alt":"add text","type":"powerUp","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":267,"y":470,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":268,"y":443,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":269,"y":411,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":890.761502734531,"y":419,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":727.761502734531,"y":407,"sx":-5,"sy":0,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":true,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":576,"y":289,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1078.3643945284634,"y":237,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1228.3643945284634,"y":258,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1641.4770908183932,"y":271,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":1438.4770908183932,"y":239,"sx":-5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":true,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":1376.4770908183934,"y":332,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1513.3030562443103,"y":331,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":19061.98160192232,"y":68229222,"sx":1.5,"sy":11682,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":1378.4816019223226,"y":357,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1378.4816019223226,"y":386,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1511.4816019223226,"y":354,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1513.4816019223226,"y":384,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1513.4816019223226,"y":411,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1378.4816019223226,"y":415,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1378.4816019223226,"y":440,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1514.4816019223226,"y":440,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1379.4816019223226,"y":468,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":1512.4816019223226,"y":470,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":1265.261502734531,"y":407,"sx":1.5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":48,"height":93,"x":1154.261502734531,"y":407,"sx":1.5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":1955.4167901431263,"y":385,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":2317,"y":407,"sx":-5,"sy":0,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":true,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":48,"height":93,"x":2262,"y":407,"sx":-5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":true,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":2227,"y":178,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":2121.4167901431265,"y":407,"sx":5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":2356,"y":148,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":2354,"y":119,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":136,"height":30,"x":2355,"y":91,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":2306,"y":85,"sx":5,"sy":0,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":1,"y":123,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":640,"y":407,"sx":5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":48,"height":93,"x":640,"y":407,"sx":5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true},{"width":136,"height":30,"x":158,"y":80,"sx":0,"sy":0,"topSpeed":10,"src":"Images/Buildingplatform.png","alt":"add text","type":"platform","friction":0.05,"classType":"Image"},{"width":48,"height":93,"x":0,"y":30,"sx":5,"sy":1,"ay":1,"topSpeed":10,"src":"Images/Robber.png","alt":"add text","type":"robber","facingLeft":false,"left_img":"Images/Robber.png","right_img":"Images/Robber.png","friction":0,"classType":"Image","noBounds":true}]')
+	; 
+	  //Player Properties
+	  var player = new sjs.Image("Images/Cop.png");
+	  player.type = "player";
+	  player.setSize(48,93);
+	  player.setGravity(3);
+	  player.bottom();
+	  player.friction = .3;
+	  player.noBounds = true; 
+	  sjs.scrollable(player,background);
+	  /* Player and Object Properties */
+
+	  sjs.scrollable(player,background);
+
+//Player movement controls
+//Player Properties
+var r_images = ["Images/Cop.png"];
+
+var l_images = ["Images/Cop.png"];
+var r_facing = true;
+var r_track = 0;
+var l_track = 0;
+sjs.keyDown(RIGHT_KEY, function(){
+	r_facing = true;
+	r_track = r_track + 1; 
+	player.pushRight(2)
+	player.setImage("Images/Cop.png");
+	if(r_track == 7){
+		r_track = 0;
+	} 
+	if(r_track >= 8){
+		player.setImage("Images/Cop.png");
+	} 
+}); //end Right key
+
+sjs.keyDown(LEFT_KEY, function(){
+	r_facing = false;
+	l_track = l_track + 1; 
+	player.pushLeft(2); 
+	player.setImage("Images/Cop.png");
+	if(l_track == 7){
+		l_track = 0;
+	} 
+	if(l_track >= 8){
+		player.setImage("Images/Cop.png");
+	} 
+}); //end Left key
+//Jumping Code
+var canJump = true;
+sjs.keyDown(UP_KEY, function(){
+	if(canJump == true){
+		canJump = false;
+		player.pushUp(55);
+		if(r_facing == true){
+			player.setImage("Images/Cop.png");
+			r_track = 8;
+		} else {
+			player.setImage("Images/Cop.png");
+			l_track = 8; 
+		} 
+} //end if statement
+
+}); //end keyDown function
+window.addEventListener("keyup", function(e){
+	if(e.keyCode == RIGHT_KEY){
+		player.setImage("Images/Cop.png");
+		r_track = 0;
+	} else if (e.keyCode == LEFT_KEY){
+		player.setImage("Images/Cop.png");
+		l_track = 0;
+} //end if statement
+}); //end EventListener function
+sjs.keyDown(DOWN_KEY, function(){
+	if(canShoot == true){
+		canShoot = false;
+		var net = new sjs.Image("Images/Net.png");
+		net.type = "net";
+		net.setSize(100,50);
+		net.friction= 0;
+		net.noBounds= true;
+		if(r_facing == true){
+			net.moveTo(player.getX()+44,player.getY()+7);
+			net.pushRight(25.5);
+		} else {
+			net.moveTo(player.getX()+-60,player.getY()+7);
+			net.pushLeft(25.5);
+		}
+		setTimeout(function(){
+			canShoot = true;
+		},1500);
+} //end canShoot if statement
+}); //end keyDown function DOWN_KEY
+//onHit functions
+sjs.onHit("player","platform", function(x,y){
+	sjs.stoppedBy(x,y);
+	if(canJump == false && x.y < y.y-85){
+		canJump = true;
+		r_track = 0;
+		l_track = 0;
+	} 
+});
+  sjs.onHit("player","robber", function(x,y){
+x.destroy();
+window.location = "gameover.html";
+});
+sjs.onHit("net","robber", function(x,y){
+x.destroy();
+y.destroy();
+});
+sjs.onHit("net",["platform", "powerUp"], function(x,y){
+sjs.bounceOff(x,y);
+});
+sjs.onHit("net",["right_screen","left_screen"], function(x,y){
+x.destroy();
+});
+sjs.onHit("robber","bottom_screen", function(x,y){
+	sjs.stoppedBy(x,y);
+});
+sjs.onHit("robber",["left_screen","right_screen"], function(x,y){
+	sjs.bounceOff(x,y);
+});
+
+sjs.onHit("robber","platform", function(x,y){
+	if(x.isAboveOf(y) == true){
+		sjs.stoppedBy(x,y);
+	} else {
+		sjs.bounceOff(x,y);
+	}
+});
+var canShoot = false;
+sjs.onHit("player","powerUp", function(x,y){
+	canShoot = true;
+	y.destroy();
+});
+var score = 0;
+	localStorage.setItem("score", score);
+var score_txt = new sjs.Text("Score: 0", 21, "Blue");
+score_txt.right().offset(-20, 0);
+score_txt.fixed = true; 
+sjs.onHit("net","robber", function(x,y){
+	score = score + 1;
+	score_txt.setText("Score :"+ score);
+	localStorage.setItem("score", score);
+	x.destroy();
+	y.destroy();
+	if (score == 10)
+	 {	
+	 	setTimeout(function()
+	 	{
+			window.location = "Win.html";
+ 		}
+ 		,500 );
+	};
+	});
+
+sjs.onHit("player","bottom_screen",function(x,y){
+	sjs.stoppedBy(x,y);
+	if(canJump == false){
+		canJump = true;
+		r_track = 0;
+		l_track = 0;
+	}
+
+});
+
+
+sjs.onHit("player",["right_screen","left_screen","top_screen"],function(x,y){
+	sjs.stoppedBy(x,y);
+});
+
+	} //end start
+	
+	</script>
+</head>
+<body onload="start()">
+	<h1> CopsAndRobbers </h1>
+	
+	<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html> 
